@@ -1,0 +1,84 @@
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    /* Hiển thị cả hai form cạnh nhau */
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Container cho mỗi form */
+.form-container {
+    width: 100%;
+    max-width: 400px; /* Chiều rộng tối đa của form */
+    margin: 20px;
+    padding: 0;
+}
+
+/* Định dạng chung cho form */
+.form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* Nhóm input (label và input) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Trường nhập liệu */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng tổng thể */
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007bff; /* Thay đổi màu viền khi focus */
+    outline: none;
+}
+
+/* Nút submit */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Màu tối hơn khi hover */
+}
