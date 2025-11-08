@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng ký & Đăng nhập</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Form Register yêu cầu:</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="reg-username">Username:</label>
+                <input type="text" id="reg-username" name="username" required minlength="6" maxlength="18" title="Username >=6 và <=18 ký tự">
+            </div>
+            <div class="form-group">
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" name="email" required title="Email đúng định dạng">
+            </div>
+            <div class="form-group">
+                <label for="reg-password">Mật khẩu:</label>
+                <input type="password" id="reg-password" name="password" required minlength="6" maxlength="18" title="Mật khẩu >=6 và <=18 ký tự">
+            </div>
+            <div class="form-group">
+                <label for="reg-confirm-password">Xác nhận mật khẩu:</label>
+                <input type="password" id="reg-confirm-password" name="confirm_password" required minlength="6" maxlength="18">
+            </div>
+            <button type="submit" class="btn-submit">Đăng Ký</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="form-container">
+        <h2>Form Login yêu cầu:</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required minlength="6" maxlength="18" title="Username >=6 và <=18 ký tự">
+            </div>
+            <div class="form-group">
+                <label for="login-password">Mật khẩu:</label>
+                <input type="password" id="login-password" name="password" required minlength="6" maxlength="18" title="Mật khẩu >=6 và <=18 ký tự">
+            </div>
+            <button type="submit" class="btn-submit">Đăng Nhập</button>
+        </form>
+    </div>
+
+    <script>
+        const registerForm = document.querySelector('.form-container form[action="/register"]');
+        registerForm.addEventListener('submit', function(event) {
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Xác nhận mật khẩu không khớp!');
+                event.preventDefault(); // Ngăn form submit
+            }
+        });
+    </script>
+</body>
+</html>
